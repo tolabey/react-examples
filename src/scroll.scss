@@ -1,0 +1,12 @@
+.spacer {
+  height: 1000px;
+
+  .scroll-value {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
