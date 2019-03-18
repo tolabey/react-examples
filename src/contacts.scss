@@ -1,0 +1,16 @@
+.users {
+
+    display: flex;
+    flex-direction: column;
+
+    .one-user {
+        width: 600px;
+        display: flex;
+        margin-left: 20px;
+
+        .name, .lastname, .email {
+            min-width: 50px;
+            margin-left: 150px;
+        }
+    }
+}
