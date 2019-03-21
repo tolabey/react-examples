@@ -7,6 +7,7 @@ class Menu extends React.Component {
             <div className="routers">
                 <Link to="/contacts"><button>{"Route the contacts"}</button></Link>
                 <Link to="/scroll-position"><button>{"Route the scroll-posititon"}</button></Link>
+                <Link to="/docs"><button>{"docs"}</button></Link>
             </div>
         )
     }
