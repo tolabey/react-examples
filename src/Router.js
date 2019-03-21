@@ -4,6 +4,7 @@ import ContactsWrapper from "./ContactsWrapper";
 import Scroll from "./Scroll.js";
 import Menu from './Menu.js';
 import Todo from './TODO/Todo.js';
+import Docs from './Docs.js';
 
 
 class Router extends React.Component {
@@ -16,6 +17,7 @@ class Router extends React.Component {
                     <Route exact path="/" component={Menu}/>
                     <Route path="/contacts" component={ContactsWrapper} />
                     <Route path="/scroll-position" component={Scroll}/>
+                    <Route path="/docs" component={Docs}/>
                     <Route path="/todo" component={Todo}/>
                     <Redirect from="/" to="/404" />
                 </Switch>
