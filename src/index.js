@@ -3,8 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Router from './Router';
 import * as serviceWorker from './serviceWorker';
+import { createStore } from 'redux';
+import reducer from './reduxStore/reducer';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<Router />, document.getElementById('root'));
+const store = createStore(reducer);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <Router />
+    </Provider>,
+    document.getElementById('root')
+);
 
 
 
@@ -12,9 +22,9 @@ ReactDOM.render(<Router />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-if(module.hot) {
-    module.hot.accept('./Router', () => {
-        const NextApp = require('./Router').default;
-        ReactDOM.render(<NextApp />, document.getElementById('root'));
-    })
-}
+// if(module.hot) {
+//     module.hot.accept('./Router', () => {
+//         const NextApp = require('./Router').default;
+//         ReactDOM.render(<NextApp />, document.getElementById('root'));
+//     })
+// }

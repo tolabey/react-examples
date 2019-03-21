@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
 class Menu extends React.Component {
@@ -8,9 +9,16 @@ class Menu extends React.Component {
                 <Link to="/contacts"><button>{"Route the contacts"}</button></Link>
                 <Link to="/scroll-position"><button>{"Route the scroll-posititon"}</button></Link>
                 <Link to="/docs"><button>{"docs"}</button></Link>
+                <Link to="/todo"><button>{"todo"}</button></Link>
             </div>
         )
     }
 }
 
-export default Menu;
+function mapProps(store) {
+    return {
+        is: store.get('is', 'not'),
+    }
+}
+
+export default connect(mapProps)(Menu);
