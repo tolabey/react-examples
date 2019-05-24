@@ -3,7 +3,6 @@ import I from "immutable";
 export default function reducer(store = I.Map({is: "is"}), action) {
     switch (action.type) {
         case "ADD_TODO":
-            console.log('ADD', action)
             return store.setIn(['todo', 'todos'], [...store.getIn(['todo', 'todos'], I.List()), action.payload]);
         case "SET_TODO_TEXT":
             return store.setIn(['todo', 'todoText'], action.payload);

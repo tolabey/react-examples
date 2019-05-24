@@ -10,24 +10,24 @@ class Todo extends React.Component {
     showTodoList(todos) {
         const { updateTodo, deleteTodo } = this.props;
 
-        console.log(todos);
         return todos.map( todo => {
-            console.log('some debug', todo)
             return (
                 <div className="one-todo" key={todo.get('id')}>
                     <button className="one-complete" onClick={() => updateTodo(todo.get('id'))}>
                         {`${todo.get('status') === 'COMPLETED' ? '●' : 'o'}`}
                     </button>
                     {todo.get('text', '')}
-                    <button className="delete-todo" onClick={() => deleteTodo(todo.get('id'))}>{'X'}</button>
+                    <button className="delete-todo" onClick={ () => deleteTodo(todo.get('id')) }>{'X'}</button>
                 </div>
             )
         })
     }
 
     addTodo() {
-        this.props.addTodo({id: uuidv4(), text: this.props.todoText, status: 'NOT_COMPLETED'});
-        this.props.setTodoText('');
+        if(this.props.todoText.trim() !== "") {
+            this.props.addTodo({id: uuidv4(), text: this.props.todoText, status: 'NOT_COMPLETED'});
+            this.props.setTodoText('');
+        }
     }
 
     desiredTodoList() {
@@ -40,7 +40,6 @@ class Todo extends React.Component {
                 return this.showTodoList(newList);
             case 'NOT_COMPLETED':
                 newList = todos.filter((oneTodo) => { return oneTodo.get('status') === 'NOT_COMPLETED' });
-                console.log(newList);
                 return this.showTodoList(newList);
             default:
                 return this.showTodoList(todos);
@@ -54,14 +53,14 @@ class Todo extends React.Component {
         return (
             <div className="todo-container">
                 <input type="text" className="add-todo" onChange={(e) => e.target.value.trim() !== '' && setTodoText(e.target.value)} value={todoText}/>
-                <button className="add-button" onClick={() => this.addTodo()}>{"ADD"}</button>
+                <button className="add-btn" onClick={() => this.addTodo()}>{"ADD"}</button>
                 <div className="todos">
                     {this.desiredTodoList(todos)}
                 </div>
                 <div className="todo-footer">
-                    <button onClick={() => setDesired('ALL')}>{"all"}</button>
-                    <button onClick={() => setDesired('COMPLETED')}>{"completed"}</button>
-                    <button onClick={() => setDesired('NOT_COMPLETED')}>{"not completed"}</button>
+                    <button className={"all-btn"} onClick={() => setDesired('ALL')}>{"all"}</button>
+                    <button className={"completed-btn"} onClick={() => setDesired('COMPLETED')}>{"completed"}</button>
+                    <button className={"not-completed-btn"} onClick={() => setDesired('NOT_COMPLETED')}>{"not completed"}</button>
                 </div>
             </div>
         )

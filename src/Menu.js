@@ -10,6 +10,9 @@ class Menu extends React.Component {
                 <Link to="/scroll-position"><button>{"Route the scroll-posititon"}</button></Link>
                 <Link to="/docs"><button>{"docs"}</button></Link>
                 <Link to="/todo"><button>{"todo"}</button></Link>
+                <Link to="/hoisting"><button>{"Hoisting"}</button></Link>
+                <Link to="/StarbucksAndNero"><button>{"StarbucksAndNero"}</button></Link>
+                <Link to="/reactRouter"><button>{"ReactRouter"}</button></Link>
             </div>
         )
     }

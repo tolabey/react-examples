@@ -14,7 +14,15 @@ class Contacts extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({ contacts: res.results })
-            })
+            });
+
+            Promise.all([
+            fetch('https://api.randomuser.me/?nat=us,gb&results=20').then((res) => res.json()),
+            fetch('https://api.randomuser.me/?nat=us,gb&results=30').then(res => res.json())
+        ]
+        ).then((data) => {
+            console.log(data[0])
+        })
     }
 
     userList() {
