@@ -1,8 +1,13 @@
 Examples: 
+
+
 1-) HOC (higher order components)
+
 2-) FACC (function as child component)
+
 3-) Hot Module
 
+4-) cypress.io
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
