@@ -1,5 +1,5 @@
 Examples: 
-
+Some components dont have redux implementation.
 
 1-) HOC (higher order components)
 

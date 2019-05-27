@@ -12,6 +12,7 @@ class Menu extends React.Component {
                 <Link to="/todo"><button>{"todo"}</button></Link>
                 <Link to="/hoisting"><button>{"Hoisting"}</button></Link>
                 <Link to="/StarbucksAndNero"><button>{"StarbucksAndNero"}</button></Link>
+                <Link to="/TableWrapper"><button>{"TableWrapper"}</button></Link>
                 <Link to="/reactRouter"><button>{"ReactRouter"}</button></Link>
             </div>
         )

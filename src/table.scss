@@ -1,0 +1,21 @@
+#table {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  .one-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .picture {
+      width: 100px;
+    }
+
+    .name {
+      width: 100px  ;
+    }
+  }
+}

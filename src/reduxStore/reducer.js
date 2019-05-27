@@ -25,6 +25,8 @@ export default function reducer(store = I.Map({is: "is"}), action) {
                 .filter((one) => one.get('id') !== action.payload);
 
             return store.setIn(['todo', 'todos'], filteredList);
+        case 'SET_CONTACT_LIST':
+            return store.set('contacts', action.payload);
         default:
             return store;
     }

@@ -7,6 +7,7 @@ import Todo from './TODO/Todo.js';
 import Docs from './Docs.js';
 import ReactRouter from './ReactRouter/ReactRouter';
 import DortyuzDort from './DortyuzDort';
+import TableWrapper from './TableWrapper';
 import StarbucksAndNero from './StarbucksAndNero';
 import Hoisting from "./Hoisting/Hoisting";
 
@@ -25,6 +26,7 @@ class Router extends React.Component {
                     <Route path="/reactRouter" component={ReactRouter}/>
                     <Route path="/hoisting" component={Hoisting}/>
                     <Route path="/StarbucksAndNero" component={StarbucksAndNero}/>
+                    <Route path="/TableWrapper" component={TableWrapper}/>
                     <Route from="/" to="/404" component={DortyuzDort}/>
                 </Switch>
             </BrowserRouter>
